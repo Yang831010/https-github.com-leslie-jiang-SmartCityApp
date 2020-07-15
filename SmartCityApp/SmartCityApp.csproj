@@ -1,0 +1,610 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF1E51DC-C68D-4898-98ED-6545F38D3154}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartCityApp</RootNamespace>
+    <AssemblyName>SmartCityApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AopSdk, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SmalltownBackstage\Lib\AopSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.NetFramework.1.8.5.2\lib\net20\BouncyCastle.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Data.OM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Framework.Data.OM.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="isRock.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\isRock.Framework.Web.0.9.86\lib\net452\isRock.Framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Caching.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.2.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.2.5\Assemblies\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WxPayAPI, Version=3.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SmalltownBackstage\Lib\WxPayAPI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bulletin.html" />
+    <Content Include="bulletinDetail.html" />
+    <Content Include="Css\bootstrap-4.4.1.css" />
+    <Content Include="Css\Shared_Project.css" />
+    <Content Include="Css\Shared.css" />
+    <Content Include="Images\favicon.png" />
+    <Content Include="Includes\bishanstory\css\qty-as1.css" />
+    <Content Include="Includes\bishanstory\css\store_style.css" />
+    <Content Include="Includes\bishanstory\css\style.css" />
+    <Content Include="Includes\bishanstory\js\qty-as1.js" />
+    <Content Include="Includes\css\animate.css" />
+    <Content Include="Includes\js\bootstrap-4.4.1.js" />
+    <Content Include="Includes\js\vue.min.js" />
+    <Content Include="Includes\js\weixin\jweixin-1.0.0.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\.github\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\css\fileinput-rtl.css" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\css\fileinput-rtl.min.css" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\css\fileinput.css" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\css\fileinput.min.css" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\css\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\examples\index.html" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\examples\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\img\loading-sm.gif" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\img\loading.gif" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\img\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\fileinput.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\fileinput.min.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\ar.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\az.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\bg.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\ca.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\cr.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\cs.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\da.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\de.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\el.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\es.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\et.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\fa.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\fi.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\fr.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\gl.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\hu.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\id.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\it.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\ja.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\kr.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\kz.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\LANG.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\lt.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\nl.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\no.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\pl.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\pt-BR.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\pt.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\ro.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\ru.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\sk.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\sl.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\sv.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\th.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\tr.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\uk.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\vi.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\zh-TW.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\zh.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\locales\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\plugins\piexif.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\plugins\piexif.min.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\plugins\purify.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\plugins\purify.min.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\plugins\sortable.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\plugins\sortable.min.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\plugins\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\js\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\nuget\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\scss\fileinput-rtl.css" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\scss\fileinput.css" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\scss\themes\explorer-fa\theme.css" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\scss\themes\explorer-fa\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\scss\themes\explorer\theme.css" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\scss\themes\explorer\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\scss\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\explorer-fa\theme.css" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\explorer-fa\theme.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\explorer-fa\theme.min.css" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\explorer-fa\theme.min.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\explorer-fa\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\explorer\theme.css" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\explorer\theme.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\explorer\theme.min.css" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\explorer\theme.min.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\explorer\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\fa\theme.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\fa\theme.min.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\fa\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\gly\theme.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\gly\theme.min.js" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\themes\gly\_notes\dwsync.xml" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\_notes\dwsync.xml" />
+    <Content Include="Includes\package\font-awesome\css\font-awesome.css" />
+    <Content Include="Includes\package\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Includes\package\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Includes\package\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Includes\package\jquery\jquery-qrcode\examples\basic.html" />
+    <Content Include="Includes\package\jquery\jquery-qrcode\examples\demo.html" />
+    <Content Include="Includes\package\jquery\jquery-qrcode\index.html" />
+    <Content Include="Includes\package\jquery\jquery-qrcode\jquery.qrcode.min.js" />
+    <Content Include="Includes\package\jquery\jquery-qrcode\MIT-LICENSE.txt" />
+    <Content Include="Includes\package\jquery\jquery-qrcode\src\jquery.qrcode.js" />
+    <Content Include="Includes\package\jquery\jquery-qrcode\src\qrcode.js" />
+    <Content Include="index.html" />
+    <Content Include="phone.html" />
+    <Content Include="Scripts\bulletin.js" />
+    <Content Include="Scripts\bulletinDetail.js" />
+    <Content Include="Scripts\phone.js" />
+    <Content Include="Scripts\index.js" />
+    <Content Include="slogin.html" />
+    <Content Include="Scripts\redefine.js" />
+    <Content Include="Scripts\Shared_Authority.js" />
+    <Content Include="Scripts\Shared_Project.js" />
+    <Content Include="Includes\js\isRockFx.js" />
+    <Content Include="Includes\js\sweetalert2-9.4.1\dist\remark.txt" />
+    <Content Include="Includes\js\sweetalert2-9.4.1\dist\sweetalert2.all.js" />
+    <Content Include="Includes\js\sweetalert2-9.4.1\dist\sweetalert2.all.min.js" />
+    <Content Include="Includes\js\sweetalert2-9.4.1\dist\sweetalert2.css" />
+    <Content Include="Includes\js\sweetalert2-9.4.1\dist\sweetalert2.min.css" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\css\bootstrap-grid.css" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\css\bootstrap-grid.min.css" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\css\bootstrap-reboot.css" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\css\bootstrap.css" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\css\bootstrap.min.css" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\js\bootstrap.bundle.js" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\js\bootstrap.js" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\js\bootstrap.min.js" />
+    <Content Include="Includes\package\jquery\breakpoints.min.js" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.css" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.min.css" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.css" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\css\dataTables.foundation.css" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\css\dataTables.foundation.min.css" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\css\dataTables.jqueryui.css" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\css\dataTables.jqueryui.min.css" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\css\dataTables.semanticui.css" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\css\dataTables.semanticui.min.css" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\css\jquery.dataTables.css" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\css\jquery.dataTables.min.css" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\images\sort_asc.png" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\images\sort_asc_disabled.png" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\images\sort_both.png" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\images\sort_desc.png" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\images\sort_desc_disabled.png" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\js\dataTables.bootstrap.js" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\js\dataTables.bootstrap.min.js" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.js" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\js\dataTables.foundation.js" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\js\dataTables.foundation.min.js" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\js\dataTables.jqueryui.js" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\js\dataTables.jqueryui.min.js" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\js\dataTables.semanticui.js" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\js\dataTables.semanticui.min.js" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\js\jquery.dataTables.js" />
+    <Content Include="Includes\package\jquery\DataTables\DataTables-1.10.18\js\jquery.dataTables.min.js" />
+    <Content Include="Includes\package\jquery\DataTables\datatables.css" />
+    <Content Include="Includes\package\jquery\DataTables\datatables.js" />
+    <Content Include="Includes\package\jquery\DataTables\datatables.min.css" />
+    <Content Include="Includes\package\jquery\DataTables\datatables.min.js" />
+    <Content Include="Includes\package\jquery\jquery-3.3.1.min.js" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\AUTHORS.txt" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\external\jquery\jquery.js" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\images\ui-icons_444444_256x240.png" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\images\ui-icons_555555_256x240.png" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\images\ui-icons_777620_256x240.png" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\images\ui-icons_777777_256x240.png" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\index.html" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\jquery-ui.css" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\jquery-ui.js" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\jquery-ui.min.css" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\jquery-ui.min.js" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\jquery-ui.structure.css" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\jquery-ui.structure.min.css" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\jquery-ui.theme.css" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\jquery-ui.theme.min.css" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\LICENSE.txt" />
+    <Content Include="Includes\package\jquery\jquery.scrollex.min.js" />
+    <Content Include="Includes\package\jquery\jquery.scrolly.min.js" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Any_finger_swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Basic_swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\css\main.css" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Enable_and_destroy.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Excluded_children.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Finger_swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Handlers_and_events.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Hold.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Image_gallery_example.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\index.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\js\jquery.ui.ipad.js" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\js\main.js" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Options.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Page_scrolling.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Page_zoom.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Pinch.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Pinch_and_Swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Pinch_status.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Single_swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Stop_propegation.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Swipe_status.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Tap_vs_swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Thresholds.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\Trigger_handlers.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\%24.fn.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\%24.fn.swipe.defaults.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\%24.fn.swipe.directions.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\%24.fn.swipe.fingers.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\%24.fn.swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\%24.fn.swipe.pageScroll.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\%24.fn.swipe.phases.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\%24.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\css\main.css" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\index.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\jquery.touchSwipe.js.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\js\jquery.ui.ipad.js" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\js\main.js" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\scripts\linenumber.js" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\scripts\prettify\Apache-License-2.0.txt" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\scripts\prettify\lang-css.js" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\scripts\prettify\prettify.js" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\styles\jsdoc.css" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\styles\prettify.css" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Any_finger_swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Basic_swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Enable_and_destroy.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Excluded_children.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Finger_swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Handlers_and_events.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Hold.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Image_gallery_example.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-index_.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Options.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Page_scrolling.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Page_zoom.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Pinch.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Pinch_and_Swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Pinch_status.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Single_swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Stop_propegation.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Swipe_status.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Tap_vs_swipe.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Thresholds.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\docs\tutorial-Trigger_handlers.html" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\jquery.touchSwipe.js" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\jquery.touchSwipe.min.js" />
+    <Content Include="Scripts\Shared.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BuildingController.cs" />
+    <Compile Include="Controllers\BulletinController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Log.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Includes\package\jquery\DataTables\Chinese-traditional.json" />
+    <Content Include="Includes\package\jquery\jquery-ui-1.12.1\package.json" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\.gitignore" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\bower.json" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\demos\tutorials.json" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\LICENSE" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\package-lock.json" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\package.json" />
+    <Content Include="Includes\package\jquery\TouchSwipe-Jquery-Plugin-1.6.19\README.md" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\css\bootstrap-grid.css.map" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\css\bootstrap.css.map" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\css\bootstrap.min.css.map" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\js\bootstrap.js.map" />
+    <Content Include="Includes\package\bootstrap-4.4.0-dist\js\bootstrap.min.js.map" />
+    <Content Include="Includes\package\font-awesome\.bower.json" />
+    <Content Include="Includes\package\font-awesome\.gitignore" />
+    <Content Include="Includes\package\font-awesome\.npmignore" />
+    <Content Include="Includes\package\font-awesome\bower.json" />
+    <Content Include="Includes\package\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Includes\package\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Includes\package\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Includes\package\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Includes\package\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Includes\package\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Includes\package\font-awesome\less\animated.less" />
+    <Content Include="Includes\package\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Includes\package\font-awesome\less\core.less" />
+    <Content Include="Includes\package\font-awesome\less\fixed-width.less" />
+    <Content Include="Includes\package\font-awesome\less\font-awesome.less" />
+    <Content Include="Includes\package\font-awesome\less\icons.less" />
+    <Content Include="Includes\package\font-awesome\less\larger.less" />
+    <Content Include="Includes\package\font-awesome\less\list.less" />
+    <Content Include="Includes\package\font-awesome\less\mixins.less" />
+    <Content Include="Includes\package\font-awesome\less\path.less" />
+    <Content Include="Includes\package\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Includes\package\font-awesome\less\screen-reader.less" />
+    <Content Include="Includes\package\font-awesome\less\stacked.less" />
+    <Content Include="Includes\package\font-awesome\less\variables.less" />
+    <Content Include="Includes\package\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_animated.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_core.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_icons.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_larger.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_list.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_mixins.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_path.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_stacked.scss" />
+    <Content Include="Includes\package\font-awesome\scss\_variables.scss" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\.github\CODE_OF_CONDUCT.md" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\.github\CONTRIBUTING.md" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\.gitignore" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\bower.json" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\CHANGE.md" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\composer.json" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\LICENSE.md" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\nuget\build.bat" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\nuget\Package.nuspec" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\package.json" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\README.md" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\scss\fileinput-rtl.scss" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\scss\fileinput.scss" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\scss\themes\explorer-fa\theme.scss" />
+    <Content Include="Includes\package\Bootstrap-FileInput-master\scss\themes\explorer\theme.scss" />
+    <Content Include="Includes\package\jquery\jquery-qrcode\.gitignore" />
+    <Content Include="Includes\package\jquery\jquery-qrcode\bower.json" />
+    <Content Include="Includes\package\jquery\jquery-qrcode\Makefile" />
+    <Content Include="Includes\package\jquery\jquery-qrcode\README.md" />
+    <Content Include="Includes\js\weixin\readme.md" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
+    <None Include="Properties\PublishProfiles\SmalltownApp.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SmartCityBackstage\BusinessRules\BusinessRules.csproj">
+      <Project>{37f3ca98-9ab7-480b-9a4a-403bb26147a3}</Project>
+      <Name>BusinessRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SmartCityBackstage\Framework\Framework.Common\Framework.Common.csproj">
+      <Project>{e4a10f71-a7d2-4f4c-acf8-53e53d8169d5}</Project>
+      <Name>Framework.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52095</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52010/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:52010/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 封裝。請啟用 NuGet 封裝還原，以下載該封裝。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

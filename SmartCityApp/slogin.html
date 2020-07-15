@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+
+    <script src="Includes/package/jquery/jquery-3.3.1.min.js"></script>
+    <link href="Includes/package/bootstrap-4.4.0-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Css/bootstrap-4.4.1.css" rel="stylesheet" />
+    <script src="Includes/package/bootstrap-4.4.0-dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="Includes/package/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <script src="Includes/js/isRockFx.js"></script>
+    <link href="Includes/js/sweetalert2-9.4.1/dist/sweetalert2.min.css" rel="stylesheet" />
+    <script src="Includes/js/sweetalert2-9.4.1/dist/sweetalert2.all.min.js"></script>
+    <link href="Includes/css/animate.css" rel="stylesheet" />
+
+    <link href="Css/Shared.css" rel="stylesheet" />
+    <script src="Scripts/Shared.js"></script>
+    <script src="Scripts/Shared_Authority.js"></script>
+    <link href="Css/Shared_Project.css" rel="stylesheet" />
+    <script src="Scripts/Shared_Project.js"></script>
+    <script src="Scripts/redefine.js"></script>
+
+    <!-- 目前功能 -->
+    <script src="Scripts/login.js"></script>
+</head>
+<body>
+    <!-- body code goes here -->
+    <div class="container pt-3">
+        <div class="row justify-content-center align-items-center">
+            <img src="images/login.png" alt="Placeholder image" width="80" height="80" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <ul id="clothingnav1" class="nav nav-pills nav-fill" role="tablist">
+            <li class="nav-item"> <a class="nav-link active" href="#home1" id="hometab1" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true"><span style="font-size:large;font-weight:bolder;color: #EDEDED;text-shadow: black 0.1em 0.1em 0.2em">登入</span></a> </li>
+        </ul>
+
+        <!-- Content Panel -->
+        <div id="clothingnavcontent1" class="tab-content">
+            <div role="tabpanel" class="tab-pane fade show active" id="home1" aria-labelledby="hometab1">
+                <div class="pt-3">
+                    <form id="memberform" onsubmit="return false;">
+                        <input type="hidden" id="type" value="H">
+                        <input type="hidden" id="isApp" value="true" />
+                        <div class="form-group">
+                            <label for="MyInput"><b style="color: #EDEDED;text-shadow: black 0.1em 0.1em 0.2em">帳號</b></label>
+                            <input type="text" class="form-control" id="account" placeholder="請輸入E-mail" style="font-size: small">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="MyInput"><b style="color: #EDEDED;text-shadow: black 0.1em 0.1em 0.2em">密碼</b></label>
+                            <input type="text" class="form-control" id="password" placeholder="請輸入密碼" style="font-size: small">
+                        </div>
+
+                        <div class="container">
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-primary mr-auto m-2 ml-sm-5">取消</button>
+                                <button type="submit" class="btn btn-primary ml-auto m-2 mr-sm-5">儲存</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

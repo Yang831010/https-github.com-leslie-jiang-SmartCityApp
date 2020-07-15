@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+
+    <script src="Includes/package/jquery/jquery-3.3.1.min.js"></script>
+    <link href="Includes/package/bootstrap-4.4.0-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="Includes/package/bootstrap-4.4.0-dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="Includes/package/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <script src="Includes/js/isRockFx.js"></script>
+    <link href="Includes/js/sweetalert2-9.4.1/dist/sweetalert2.min.css" rel="stylesheet" />
+    <script src="Includes/js/sweetalert2-9.4.1/dist/sweetalert2.all.min.js"></script>
+    <link href="Includes/css/animate.css" rel="stylesheet" />
+
+    <link href="Css/Shared.css" rel="stylesheet" />
+    <script src="Scripts/Shared.js"></script>
+    <script src="Scripts/Shared_Authority.js"></script>
+    <link href="Css/Shared_Project.css" rel="stylesheet" />
+    <script src="Scripts/Shared_Project.js"></script>
+    <script src="Scripts/redefine.js"></script>
+
+    <!-- html樣板 -->
+    <link href="Includes/bishanstory/css/style.css" rel="stylesheet" />
+
+    <!-- 額外功能 -->
+    <link href="Includes/package/Bootstrap-FileInput-master/css/fileinput.css" rel="stylesheet" />
+    <link href="Includes/package/Bootstrap-FileInput-master/themes/explorer-fa/theme.css" rel="stylesheet" />
+    <script src="Includes/package/Bootstrap-FileInput-master/js/fileinput.js"></script>
+    <script src="Includes/package/Bootstrap-FileInput-master/js/locales/zh.js"></script>
+    <script src="Includes/package/Bootstrap-FileInput-master/themes/explorer-fa/theme.js"></script>
+
+    <!-- 目前功能 -->
+    <script src="Scripts/login.js"></script>
+</head>
+<body>
+  <form id="memberform" onsubmit="return false;">
+    <div class="TitleBar">手机号登录</div>
+    <div class="container-fluid py-3">
+      <div class="form-group d-flex">
+        <select id="country_tel_code" class="custom-select col-4"></select>
+        <input type="hidden" id="type" value="M">
+        <input type="hidden" id="isApp" value="true" />
+        <input type="tel" id="account" class="form-control" placeholder="请输入手机号" autocomplete="off">
+      </div>
+
+      <div class="form-group d-flex">
+        <input type="password" id="password" class="form-control col-12" placeholder="请输入密码" id="tel" autocomplete="off">
+        <!-- <button type="button" class="btn btn-outline-warning col-4">获取验证码</button> -->
+      </div>
+
+      <div class="form-group mt-5 text-center">
+        <button type="submit" class="btn btn-warning btn-block">登录</button>
+        <label class="em09"><i class="fa fa-info-circle text-main-color"></i> 未注册的手机号码登录后自动注册</label>
+      </div>
+
+      <div class="em09 text-center"><a href="login_problem.html">登录遇到问题?</a></div>
+
+      <!-- <div class="btn-footer-area">
+        <div class="d-flex">
+          <span class="flex-fill"><hr></span>
+          <span class="p-1 text-center">第三方登录</span>
+          <span class="flex-fill"><hr></span>
+        </div>
+        <div class="text-center">
+          <div class="th3Login-btn"><i class="fa fa-weixin"></i></div>
+        </div>
+      </div> -->
+    </div>
+  </form>
+  <div id="testaccount" style="position:absolute;right:0px;bottom:0px;width:50px;height:50px;"></div>
+</body>
+</html>

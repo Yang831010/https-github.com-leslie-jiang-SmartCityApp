@@ -1,0 +1,463 @@
+/* ---------- portrait ---------- */
+/* ---------- 5SE ---------- */
+/*@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) {
+    * {font-size: 0.9rem !important;}
+}*/
+/* ---------- 678 ---------- */
+/*@media only screen and (min-device-width : 375px) and (max-device-width : 736px) and (orientation : portrait) {
+    * {font-size: 0.9rem !important;}
+}*/
+/* ---------- X ---------- */
+/*@media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
+    * {font-size: 0.9rem !important;}
+}*/
+/* ---------- 678 PLUS ---------- */
+/*@media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : portrait) {
+    * {font-size: 1rem !important;}
+}*/
+/* ---------- IPAD ---------- */
+/*@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    * {font-size: 1.25rem !important;}
+}
+/* ---------- IPAD PRO ---------- */
+/*@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) and (orientation : portrait) {
+    * {font-size: 1.4rem !important;}
+}*/
+
+/* ---------- landscape ---------- */
+/* ---------- IPAD PRO ---------- */
+/*@media only screen and (min-device-width : 1025px) and (max-device-width : 1366px) and (orientation : landscape) {
+    * {font-size: 1.4rem !important;}
+}*/
+/* ---------- IPAD ---------- */
+/*@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    * {font-size: 1.3rem !important;}
+}*/
+/* ---------- X ---------- */
+/*@media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : landscape) {
+    * {font-size: 0.9rem !important;}
+}*/
+/* ---------- 678 ---------- */
+/*@media only screen and (min-device-width : 375px) and (max-device-width : 736px) and (orientation : landscape) {
+    * {font-size: 0.9rem !important;}
+}*/
+/* ---------- 678 PLUS ---------- */
+/*@media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) {
+    * {font-size: 1rem !important;}
+}*/
+/* ---------- 5SE ---------- */
+/*@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
+    * {font-size: 0.9rem !important;}
+}*/
+
+/** {
+    box-sizing: border-box !important;
+}*/
+/* -------------------------------------------------- */
+
+
+/* 有再用 -------------------------------------------------- */
+/*form*/
+.formeven dl dt:nth-of-type(even), .formeven dl dd:nth-of-type(even) {
+    background-color: #ffe4ce;
+}
+.input-group.checkbox {
+    /*padding-right:10em;*/
+}
+.input-group.checkbox > .form-control {
+    border: none;
+    background-color:unset;
+}
+.input-group.checkbox > .form-control  > label {
+    width:100%;
+}
+
+/*formsearch*/
+.formsearch {
+width:100%;
+margin-bottom: 1em;
+}
+.formsearch dl {
+margin: 0px;
+display: flex;
+flex-wrap: wrap;
+}
+.formsearch dl dt, .formsearch dl dd {
+text-align: center;
+vertical-align: middle;
+min-height:3em;
+line-height:3em;
+margin-bottom:0.5em;
+}
+.formsearch dl dt {
+width: 7em;
+}
+.formsearch dl dd {
+width: calc(100% - 7em);
+}
+.formsearch.formsearch_2col dl dt {
+width: 8em;
+}
+.formsearch.formsearch_2col dl dd {
+width: calc(50% - 8em);        
+}
+.formsearch.formsearch_2col dl dd.maxddcol {
+    width: calc(100% - 8em);
+}
+.formsearch dl dd textarea {
+    height:auto !important;
+    min-height:6em;
+}
+.formsearch dl dd > * {
+    display:block;
+    width: 100%;
+}
+.formsearch dl dd > span {
+    display: flex;
+    width: 100%;
+}
+.formsearch dl dd span > * {
+    display: flex;
+    margin:0px;
+}
+
+/* 37 */
+.formsearch dl dd span.split37 > *:nth-child(1) {
+    margin-right: 5px;
+    width: 30%;
+}
+.formsearch dl dd span.split37 > *:nth-child(2) {
+    width: 70%;
+}
+/* 37 */
+
+/* 55 */
+.formsearch dl dd span.split55 > *:nth-child(1) {
+    margin-right: 5px;
+    width: 50%;
+}
+.formsearch dl dd span.split55 > *:nth-child(2) {
+    width: 50%;
+}
+/* 55 */
+
+/* 64 */
+.formsearch dl dd span.split64 > *:nth-child(1) {
+    margin-right: 5px;
+    width: 60%;
+}
+.formsearch dl dd span.split64 > *:nth-child(2) {
+    width: 40%;
+}
+/* 64 */
+
+/* 82 */
+.formsearch dl dd span.split82 > *:nth-child(1) {
+    margin-right: 5px;
+    width: 80%;
+}
+.formsearch dl dd span.split82 > *:nth-child(2) {
+    width: 20%;
+}
+/* 82 */
+
+/* YMD */
+.formsearch dl dd span.splitYMD > *:nth-child(1) {
+    width: 40%;
+}
+.formsearch dl dd span.splitYMD > *:nth-child(2) {
+    width: 30%;
+}
+.formsearch dl dd span.splitYMD > *:nth-child(3) {
+    width: 30%;
+}
+/* YMD */
+
+/* ADDRESS3 */
+.formsearch dl dd span.splitADDRESS3 > *:nth-child(1) {
+    margin-right: 5px;
+    width: calc(20% - 5px);
+}
+.formsearch dl dd span.splitADDRESS3 > *:nth-child(2) {
+    margin-right: 5px;
+    width: calc(20% - 5px);
+}
+.formsearch dl dd span.splitADDRESS3 > *:nth-child(3) {
+    width: 60%;
+}
+/* ADDRESS3 */
+
+/* fromto */
+.formsearch dl dd span.fromto {
+    display: flex;
+}
+.formsearch dl dd span.fromto.fromtowrap {
+    flex-wrap: wrap;
+}
+.formsearch dl dd span.fromto > * {
+    width: 100%;
+    text-align:center;
+    justify-content: center;
+}
+.formsearch dl dd span.fromto > .tilde {
+    display: block;
+    margin: auto;
+    width: 5em;
+    height: 2em;
+    line-height: 2em;
+}
+/* fromto */
+
+.formsearch > div {
+    /*margin:0px 1em;*/
+    /*text-align: center;*/
+}
+
+/*formdata*/
+.formdata {
+    margin-bottom: 1em;
+}
+.formdata dl {
+    margin: 0px;
+}
+.formdata dl dt, .formdata dl dd {
+    display: inline-block;
+    padding: 0.5em;
+}
+.formdata dl dt {
+    width: 30%;
+    vertical-align: top;
+    text-align: center;
+}
+.formdata dl dd {
+    width: 65%;
+}
+.formdata dl > dd > span {
+    display: inline-block;
+}
+.formdata > div {
+    margin: 0px 0.5em;
+    text-align: center;
+}
+
+/* dttable start */
+.dttable {
+    width: 100% !important;
+    table-layout: fixed;  /*定義寬度需要設定*/
+    margin:unset !important;
+}
+.dttable-width-id {
+    width:5em;
+}
+.dttable-width-date {
+}
+.dttable-width-datetime {
+    width: 15em;
+}
+.dttable-width-status {
+    width:10em;
+}
+.dttable-width-button {
+    width:17em;
+}
+.dttable thead {
+}
+.dttable thead th {
+}
+.dttable tbody td {
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.dttable tbody td .photo {
+    height: 11em;
+    overflow:hidden;
+}
+.dttable tbody td .photo.zoom {
+    transition: transform .2s; /* Animation */
+}
+
+.dttable tbody td .photo > img {
+    width: 100%;
+    max-width: 15em;
+}
+.dttable tbody td .photo.zoom:hover  > img {
+    transform: scale(3);
+    margin: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;    
+    left: 0;
+}
+.dttableeven tbody tr {
+}
+.dttableeven tbody tr:nth-child(even) {
+    background-color:#0000001a;
+}
+.dttable input[type="checkbox"] + label:before {
+    right: 0;
+}
+.dttable ~ .paging_full_numbers {
+    width:unset;
+    height:unset;
+    line-height:unset;
+}
+.dttable ~ .paging_full_numbers .paginate_button.current {
+    background-color: #FFF !important;
+}
+/* dttable end */
+
+/* loading start */
+.loadermask > div {
+    z-index: 20000;
+    position: absolute;
+    text-align: center;
+    left: 45%;
+    top: 40%;
+    margin: 0px auto;
+}
+.loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+/* loading end */
+
+/* dialog style start */
+.customdialog {
+}
+.customdialog > .ui-dialog-titlebar {
+    text-align: center;
+    background:rgba(52,73,94,0.94) !important;
+    color: white;
+    border: none !important;    
+}
+.minidialog {
+    width:20% !important;
+}
+/* dialog style end */
+
+/* tab start */
+/*.tabnav {
+}
+.tabnav li a {
+    padding: 1em 4em;
+    border-radius: .5rem .5rem 0 0 !important;
+}
+.tabnavbottom {
+    width:100%;
+    padding: 0px;
+    margin: 0px;
+    border: 2px solid #2A3F54;
+}
+.tab-content {
+    margin:1em !important;
+}
+.nav-link {
+    color: #2A3F54;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: #2A3F54;
+    color: #FFFFFF;
+}*/
+/* tab end */
+
+/* window start */
+.window {
+    margin: 0.5em 0px 0px 0px !important;
+}
+.window > .windownav {
+padding: 0.5em;
+background-color: #2A3F54;
+color: white;
+border-radius: 10px 10px 0px 0px;
+text-align: left !important;
+}
+.window > .windownav > img {
+width: 1.5em;
+height: 1.5em;
+border:none;
+background-repeat: no-repeat;
+background-size: cover;
+float: right;
+}
+.window > .windownav > img.open {
+background-image: url('/Images/details_open.png');
+}
+.window > .windownav > img.close {
+background-image: url('/Images/details_close.png');
+}
+.window > .windowcontent {
+display: none;
+margin: 0px !important;
+padding: 1em;
+border: 1px solid #ffd220;
+border-top: 0px;
+}
+/* window end */
+
+/* dl list start */
+.dllist {
+    display: flex;
+    flex-wrap: wrap;
+}
+.dllist > dt, .dllist > dd {
+    border-bottom: 1px solid black;
+    height:3em;
+    line-height:3em;
+    margin:unset;
+    text-align:center;
+}
+.dllist > dt {
+}
+.dllist > dd {
+}
+/* dl list end */
+
+.text-center-flex {
+    justify-content: center;
+}
+
+/* photo */
+.photo1 {
+    overflow:hidden;
+}
+.photo1.zoom {
+    transition: transform .2s; /* Animation */
+}
+
+.photo1 > img {
+    width: 100%;
+    max-width: 15em;
+}
+.photo1.zoom:hover  > img {
+    transform: scale(3);
+    margin: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;    
+    left: 0;
+}
+
+.photo2 {
+    height: 100%;
+    overflow: hidden;
+}
+.photo2 > img {
+    width: 100%;
+    max-width: 15em;
+}
+/* photo */

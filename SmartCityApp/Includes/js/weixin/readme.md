@@ -1,0 +1,1 @@
+https://github.com/JeffreySu/WeiXinMPSDK/blob/master/readme.md
